@@ -37,13 +37,12 @@ export default function BoxGrid({ numBoxes = 9 }) {
                 }
             })
         })
-
     }
 
     return (
         <div className="BoxGrid">
-            {boxes.map((b) => (
-                <Box isActive={b} toggle={() => toggleBox(idx)} />
+            {boxes.map((b, idx) => (
+                <Box key={idx} isActive={b} toggle={() => toggleBox(idx)} />
             ))}
             <button onClick={reset}>Reset</button>
         </div>
